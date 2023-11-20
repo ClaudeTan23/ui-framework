@@ -1,0 +1,29 @@
+<div class="container" *ngIf="validId; else elseInvalid">
+    <div class="img-block">
+        <img [src]="['/assets/img/' + carDetails?.carPhoto]" alt="">
+    </div>
+    <div class="block">
+        <div class="title">
+            <div class="label">Make</div>
+            <div class="detail">{{ carDetails?.Make }}</div>
+        </div>
+        <div class="title">
+            <div class="label">Model</div>
+            <div class="detail">{{ carDetails?.Model }}</div>
+        </div>
+        <div class="title">
+            <div class="label">Year</div>
+            <div class="detail">{{ carDetails?.Year }}</div>
+        </div>
+        <div class="title">
+            <div class="label">Description</div>
+            <div class="detail">{{ carDetails?.Description }}</div>
+        </div>
+    </div>
+</div>
+
+<ng-template class="warning" #elseInvalid>
+    <div class="warning">
+        Car Not Found
+    </div>
+</ng-template>

@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+    width: auto;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: #303030;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 0 4px 1px #404040;
+}
+
+.block:hover {
+    box-shadow: 0 0 20px 2px #404040;
+    cursor: pointer;
+}
+
+.img-block {
+    display: flex;
+    width: 300px;
+    height: 200px;
+}
+
+img {
+    object-fit: fill;
+    width: 100%;
+}
+
+.detail-block {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    font-weight: 600;
+    color: #cccccc;
+    font-size: 14px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+a {
+    text-decoration: none;
+}

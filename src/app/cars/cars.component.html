@@ -1,0 +1,20 @@
+<div class="container">
+    <a [routerLink]="['/car/', carList.id]" *ngFor="let carList of carDetails">
+        <div class="block">
+            <div class="img-block">
+                <img [src]="['/assets/img/' + carList.carPhoto]" alt="asd" />
+            </div>
+            <div class="detail-block">
+                <div>
+                    <span>Make: </span>
+                    <span> {{ carList.Make }}</span>
+                </div>
+                <div>
+                    <span>Model: </span>
+                    <span> {{ carList.Model }}</span>
+                </div>
+            </div>
+        </div>
+    </a>
+    
+</div>
