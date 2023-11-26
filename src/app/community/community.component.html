@@ -1,0 +1,66 @@
+<app-search-header></app-search-header>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+           
+            <div class="modal-body">
+                <textarea class="form-control" placeholder="Write some post..." id="floatingTextarea" #postInput></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #modal>Close</button>
+                <button type="button" class="btn btn-primary" (click)="post()">Post</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main [style]="'min-height: 700px; margin-top: 120px;'">
+
+        <div class="col" style="display: flex; justify-content: right;">
+            <button type="button" class="btn custom-btn form-control mt-6 mb-6" style="width: 200px" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Create Post
+            </button>
+        </div>
+
+
+    <div class="col mb-4 col-12" *ngFor="let post of posts">
+        <div class="team-thumb d-flex align-items-center">
+            <img [src]="post.img"
+                class="img-fluid custom-circle-image team-image me-4" alt="">
+    
+            <div class="team-info">
+                <h5 class="mb-0">{{ post.user }}</h5>
+                <p class="text-muted">Today</p>
+            </div>
+        </div>
+        <div class="col justify-content-center" style="display: flex; justify-content: center; ">
+            <div class="col-10" >{{ post.post }}</div>
+        </div>
+        <div class="col" style="display: flex; justify-content: center; flex-direction: column; align-items: center; padding: 20px 0;">
+            <div class="col-10">
+                <textarea class="form-control" placeholder="Leave a comment here" (keyup)="comment($event, post.id)"></textarea>
+                <label for="floatingTextarea">Comments</label>
+            </div>
+
+                <div class="col-10" *ngFor="let comment of post.comments">
+                    <div class="team-thumb d-flex col-10">
+                        <img [src]="comment.img"
+                            class="img-fluid custom-circle-image team-image me-2" alt="">
+                    
+                        <div class="team-info">
+                            <h5 class="mb-1">{{ comment.user }}</h5>
+                            <p class="text-muted">Today</p>
+                        </div>
+                    </div>
+                    <div class="col justify-content-center" style="display: flex; justify-content: center; ">
+                        <div class="col-10">{{ comment.comment }}</div>
+                    </div>
+                </div>
+
+        </div>
+        
+    </div>
+</main>
+
+<app-footer></app-footer>

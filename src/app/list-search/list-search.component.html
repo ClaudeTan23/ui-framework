@@ -1,0 +1,26 @@
+
+<main style="min-height: 750px; margin-top: 120px;" >
+    <div *ngIf="load">
+        <div class="col p-5 text-center" *ngIf="!result">
+            <h2>Users not found</h2>
+        </div>
+
+
+        <a [routerLink]="['/profile/' + user.id]" *ngFor="let user of userResult">
+            <div class="col d-flex justify-content-center">
+                <div class="col-10">
+                    <div class="team-thumb d-flex align-items-center" style="background-color: #e4e4e4; cursor: pointer;">
+                        <img [src]="user.img" class="img-fluid custom-circle-image team-image me-4" alt="">
+            
+                        <div class="team-info">
+                            <h5 class="mb-4">{{ user.username }}</h5>
+            
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</main>
+<app-footer></app-footer>
